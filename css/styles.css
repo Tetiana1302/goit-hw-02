@@ -5,6 +5,7 @@
   --background-color-one: #2f303a;
   --background-color-two: #f5f4fa;
   --secondary-color: #2196f3;
+  --active-color: #188ce8;
   --white-color: #ffffff;
 }
 
@@ -16,19 +17,18 @@ body {
 h1 {
   font-weight: 900;
   font-size: 44px;
-  line-height: 60px;
+  line-height: 1.36;
   text-align: center;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--white-color);
-  background-color: var(--background-color-one);
 }
 
 .logo {
   font-family: Raleway;
   font-weight: 700;
   font-size: 26px;
-  line-height: 31px;
+  line-height: 1.19;
   letter-spacing: 0.03em;
   color: var(--secondary-color);
   text-decoration: none;
@@ -42,18 +42,29 @@ h1 {
   list-style: none;
   font-weight: 500;
   font-size: 14px;
-  line-height: 16px;
+  line-height: 1.14;
   letter-spacing: 0.02em;
+}
+
+.nav-studio,
+.nav-port,
+.nav-portfolio,
+.nav-contact {
   text-decoration: none;
 }
 
+.nav-port,
+.nav-contact {
+  color: var(--primary-color);
+}
 .contacts {
   list-style: none;
   text-decoration: none;
 }
 
-.nav-studio,
-.nav-portfolio {
+.nav-studio-active,
+.nav-portfolio-active {
+  text-decoration: none;
   color: var(--secondary-color);
 }
 
@@ -61,9 +72,13 @@ h1 {
 .contacts-phone {
   font-weight: 500;
   font-size: 14px;
-  line-height: 16px;
+  line-height: 1.14;
   color: var(--primary-color-light);
   text-decoration: none;
+}
+.hero {
+  background-color: var(--background-color-one);
+  border: 1px solid #ececec;
 }
 
 .button {
@@ -74,7 +89,7 @@ h1 {
   background-color: var(--secondary-color);
   font-weight: 700;
   font-size: 16px;
-  line-height: 30px;
+  line-height: 1.88;
   display: flex;
   align-items: center;
   text-align: center;
@@ -82,8 +97,16 @@ h1 {
   cursor: pointer;
 }
 
-.features-header {
-  visibility: hidden;
+.visually-hidden {
+  white-space: nowrap;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  margin: -1px;
 }
 
 .features {
@@ -93,7 +116,7 @@ h1 {
 .feature {
   font-weight: 700;
   font-size: 14px;
-  line-height: 16px;
+  line-height: 1.14;
   letter-spacing: 0.03em;
   text-transform: uppercase;
 }
@@ -110,7 +133,7 @@ h1 {
 .team-header {
   font-weight: 700;
   font-size: 36px;
-  line-height: 42px;
+  line-height: 1.71;
   text-align: center;
   letter-spacing: 0.03em;
 }
@@ -119,14 +142,24 @@ h1 {
   list-style: none;
 }
 
+.team {
+  background-color: var(--background-color-two);
+}
+
 .team-list {
   list-style: none;
 }
 
+.team-card {
+  background-color: var(--white-color);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 0px 0px 4px 4px;
+}
 .team-member {
   font-weight: 500;
   font-size: 16px;
-  line-height: 19px;
+  line-height: 1.19;
   text-align: center;
   letter-spacing: 0.03em;
 }
@@ -134,7 +167,7 @@ h1 {
 .team-profession {
   font-weight: 400;
   font-size: 16px;
-  line-height: 19px;
+  line-height: 1.19;
   text-align: center;
   letter-spacing: 0.03em;
   color: var(--primary-color-light);
@@ -150,7 +183,7 @@ h1 {
 .footer-adress-link {
   font-weight: 400;
   font-size: 14px;
-  line-height: 24px;
+  line-height: 1.71;
   letter-spacing: 0.03em;
   color: var(--white-color);
   text-decoration: none;
@@ -160,16 +193,13 @@ h1 {
 .footer-mail-link,
 .footer-phone-link {
   font-size: 14px;
-  line-height: 24px;
+  line-height: 1.71;
   letter-spacing: 0.03em;
   color: var(--primary-color-light);
   text-decoration: none;
   font-style: normal;
 }
 
-.portfolio-works {
-  visibility: hidden;
-}
 .portfolio-works-list {
   list-style: none;
 }
@@ -177,7 +207,7 @@ h1 {
 .portfolio-works-button {
   font-weight: 500;
   font-size: 16px;
-  line-height: 26px;
+  line-height: 1.63;
   text-align: center;
   letter-spacing: 0.03em;
   background-color: var(--background-color-two);
@@ -195,13 +225,13 @@ h1 {
 .portfolio-work-customer {
   font-weight: 700;
   font-size: 18px;
-  line-height: 36px;
+  line-height: 2;
   letter-spacing: 0.06em;
 }
 
 .portfolio-work-name {
   font-size: 16px;
-  line-height: 30px;
+  line-height: 1.88;
   letter-spacing: 0.03em;
   color: var(--primary-color-light);
 }
@@ -210,7 +240,6 @@ h1 {
 .contacts-mail:focus,
 .contacts-phone:hover,
 .contacts-phone:focus {
-  text-decoration: underline;
   color: #2196f3;
 }
 
@@ -218,4 +247,18 @@ h1 {
 .portfolio-works-button:focus {
   background-color: var(--secondary-color);
   color: var(--white-color);
+}
+
+.button:hover,
+.button:focus {
+  background-color: var(--active-color);
+}
+
+.footer-adress-link:hover,
+.footer-adress-link:focus,
+.footer-mail-link:hover,
+.footer-mail-link:focus,
+.footer-phone-link:hover,
+.footer-phone-link:focus {
+  color: var(--active-color);
 }
